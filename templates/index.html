@@ -32,7 +32,12 @@
     <form action="{{ url_for('predict')}}"method="post">
 
     <center>
-      <input type="checkbox" id="SeniorCitizen" name="SeniorCitizen" value=1>
+      <input type="string" name="CustomerID" placeholder="Customer ID"  required="required"/> 
+      <br>
+     </br>
+
+     <br>
+     <input type="checkbox" id="SeniorCitizen" name="SeniorCitizen" value=1>
       <label for="SeniorCitizen"> Senior Citizen</label> &nbsp;&nbsp;&nbsp;
       <input type="checkbox" id="Partner" name="Partner" value=1>
       <label for="Partner">Has a partner</label> &nbsp;&nbsp;&nbsp;
@@ -96,7 +101,7 @@
 
 <center>
 		<input type="number"  min="0" name="MonthlyCharges" placeholder="Monthly Charges" required="required" />
-<input type="number"  min="0" name="Tenure" placeholder="Tenure in Months" required="required" />
+    <input type="number"  min="0" name="Tenure" placeholder="Tenure in Months" required="required" />
 
 </center>
 <br><br>
@@ -104,7 +109,14 @@
 <center>
 <button type="submit" class="btn btn-primary btn-block btn-large" style="height:30px;width:200px">Predict</button>
 </center>
-    </form>
+</form>
+
+<br>
+   <center>
+
+   {{ prediction_text }}
+   
+  </center>
 
  </div>
  
